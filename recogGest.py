@@ -140,8 +140,11 @@ while(1):
         pass
         
     
-    k = cv2.waitKey(5) & 0xFF
-    if k == 27:
+    key = cv2.waitKey(200)
+    if key in [ord('a'), 1048673]:
+        nothing
+    elif key in [27, 1048603]: # ESC key to abort, close window
+        cv2.destroyAllWindows()
         break
     
 cv2.destroyAllWindows()
